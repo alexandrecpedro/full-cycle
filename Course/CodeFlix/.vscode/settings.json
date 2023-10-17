@@ -1,0 +1,11 @@
+{
+    "peacock.remoteColor": "#215732",
+    "conventionalCommits.scopes": [
+        "devcontainer.json",
+        "settings.json"
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBorder": "#422c74"
+    },
+    "jest.jestCommandLine": "npm run test -- --runInBand --detectOpenHandles --forceExit",
+}
