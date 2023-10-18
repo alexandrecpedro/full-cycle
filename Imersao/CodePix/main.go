@@ -12,7 +12,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/cmd"
+import "github.com/alexandrecpedro/fullcycle/Imersao/CodePix/cmd"
 
 func main() {
 	cmd.Execute()

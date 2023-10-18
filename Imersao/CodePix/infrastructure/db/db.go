@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/domain/model"
+	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/domain/model"
 	"log"
 	"os"
 	"path/filepath"

@@ -16,45 +16,36 @@ limitations under the License.
 package cmd
 
 import (
-	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/application/grpc"
-	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/application/kafka"
-	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/infrastructure/db"
-	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/spf13/cobra"
+	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/application/grpc"
+	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/infrastructure/db"
 	"os"
+
+	"github.com/spf13/cobra"
 )
 
-var (
-	gRPCPortNumber int
-)
+var portNumber int
 
-// allCmd represents the all command
-var allCmd = &cobra.Command{
-	Use:   "all",
-	Short: "Run gRPC and a Kafka Consumer",
-
+// grpcCmd represents the grpc command
+var grpcCmd = &cobra.Command{
+	Use:   "grpc",
+	Short: "Start gRPC server",
 	Run: func(cmd *cobra.Command, args []string) {
 		database := db.ConnectDB(os.Getenv("env"))
-		go grpc.StartGrpcServer(database, portNumber)
-
-		deliveryChan := make(chan ckafka.Event)
-		producer := kafka.NewKafkaProducer()
-		go kafka.DeliveryReport(deliveryChan)
-		kafkaProcessor := kafka.NewKafkaProcessor(database, producer, deliveryChan)
-		kafkaProcessor.Consume()
+		grpc.StartGrpcServer(database, portNumber)
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(allCmd)
-	allCmd.Flags().IntVarP(&gRPCPortNumber, "grpc-port","p", 500051,"gRPC Port")
+	rootCmd.AddCommand(grpcCmd)
+	grpcCmd.Flags().IntVarP(&portNumber, "port", "p",50051, "gRPC Server port")
+
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// allCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// grpcCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// allCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// grpcCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

@@ -1,4 +1,4 @@
-module github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/go
+module github.com/alexandrecpedro/fullcycle/Imersao/CodePix
 
 go 1.15
 

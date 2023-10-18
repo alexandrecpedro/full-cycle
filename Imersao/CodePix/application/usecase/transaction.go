@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"errors"
-	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/domain/model"
+	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/domain/model"
 	"log"
 )
 

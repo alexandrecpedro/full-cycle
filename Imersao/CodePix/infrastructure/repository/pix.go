@@ -2,7 +2,7 @@ package repository
 
 import (
 	"fmt"
-	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/domain/model"
+	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/domain/model"
 	"github.com/jinzhu/gorm"
 )
 

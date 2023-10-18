@@ -1,8 +1,8 @@
 package factory
 
 import (
-	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/application/usecase"
-	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/go/infrastructure/repository"
+	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/application/usecase"
+	"github.com/alexandrecpedro/fullcycle/Imersao/CodePix/infrastructure/repository"
 	"github.com/jinzhu/gorm"
 )
 
