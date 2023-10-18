@@ -30,7 +30,7 @@ type PixKey struct {
 }
 
 func (p *PixKey) isValid() error {
-	_, err := govalidator.ValidateStruct(pixKey)
+	_, err := govalidator.ValidateStruct(p)
 
 	if p.Kind != "email" && p.Kind != "cpf" {
 		return errors.New("invalid type of key")
