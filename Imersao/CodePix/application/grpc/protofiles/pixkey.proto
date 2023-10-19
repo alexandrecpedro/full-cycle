@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package github.com.alexandrecpedro.fullcycle.Imersao.CodePix.go;
+package github.com.alexandrecpedro.fullcycle.Imersao.CodePix;
 
 option go_package = "github.com/alexandrecpedro/fullcycle/Imersao/CodePix/protofiles;pb";
 
